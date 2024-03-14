@@ -1,21 +1,15 @@
 <?php
+
 namespace App\Controllers;
 
-use App\Models\ExampleModel;
+
 use App\Providers\View;
 
-class HomeController {
-    
-    public function index(){
-       // $data = 'Hello from HomeController';
-        $model = new ExampleModel;
-        $data = $model->getData();
-        //include 'views/home.php';
-       View::render('home', ['var' => $data]);
-    }
+class HomeController
+{
 
-    public function home(){
-        $data = 'Hello from HomeController';
-        include 'views/home.php';
+    public function index()
+    {
+        View::render('home');
     }
 }

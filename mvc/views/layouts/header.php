@@ -11,10 +11,19 @@
 <body>
     <nav>
         <ul>
-            <li><a href="{{base}}">Accueil</a></li>
+            <li><a href="{{base}}/dashboard">Dashboard</a></li>
             <li><a href="{{base}}/course">Courses</a></li>
-            <li><a href="">Users</a></li>
-            <li><a href="">Login</a></li>
+            {% if session.privilege_id == 1 %}
+            <li><a href="{{base}}/user/create">Users</a></li>
+            {% endif %}
+            {% if guest %}
+            <li><a href="{{base}}/login">Login</a></li>
+            {% else %}
+            <li><a href="{{base}}/logout">Logout</a></li>
+            {% endif %}
         </ul>
     </nav>
     <main>
+        {% if guest is empty %}
+        Hello {{ session.user_name }}!
+        {% endif%}

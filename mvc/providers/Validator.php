@@ -45,6 +45,17 @@ class Validator {
         }
         return $this;
     }
+
+    public function unique($model){
+        $model = 'App\\Models\\'.$model;
+        $model = new $model;
+        $unique = $model->unique($this->key, $this->value);
+        if($unique){
+            $this->errors[$this->key] = "This $this->name must be unique";
+        }
+        return $this;
+
+    }
 ////////////////////////////////////////////////////////
     public function isSuccess(){
         if(empty($this->errors)) return true;

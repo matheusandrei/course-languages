@@ -1,8 +1,5 @@
 {{ include('layouts/header.php', { title: 'Create' }) }}
 <h1>Bienvenue au cours de langues !</h1>
-<div class="img-container">
-        <img src="caminho/para/sua/imagem.jpg" alt="">
-    </div>
 <div class="container-avantages">
         <h2>Avantages de Notre Cours</h2>
         <ul>
